@@ -1,0 +1,6 @@
+docker image rm techextension/portal:v1
+docker build -t techextension/portal:v1 .
+docker stop portal
+docker container rm -f portal
+docker run --name portal -d -p 8000:80 techextension/portal:v1
+docker push techextension/portal:v1
